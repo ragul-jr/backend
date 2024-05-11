@@ -4,8 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoute from "./Routers/auth.js";
-import { connectDB } from "./utils/db/index.js";
-
+import { connectDB } from "./utils/connect.js";
 
 dotenv.config();
 
@@ -31,7 +30,6 @@ connectDB()
   .catch((err) => {
     console.log("Error", err);
   });
-
 
 app.use(express.json());
 app.use(cookieParser());

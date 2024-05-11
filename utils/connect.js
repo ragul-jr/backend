@@ -8,7 +8,7 @@ let cachedDb = null;
 
 if (!uri) {
   throw new Error(
-    "Please define the MONGODB_URI environment variable inside /config/dev.js",
+    "Please define the MONGODB_URI environment variable inside /config/dev.js"
   );
 }
 
@@ -83,4 +83,4 @@ const createCollection = async (dbName, collectionName, options) => {
   return null;
 };
 
-module.exports = { connectDB, terminateDB, getCollection, createCollection };
+export { connectDB, terminateDB, getCollection, createCollection };

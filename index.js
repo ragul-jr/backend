@@ -4,7 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoute from "./Routers/auth.js";
-import { connectDB } from "./utils/db/index.js";
+import { connectDB } from "./utils/connect.js";
 
 dotenv.config();
 
@@ -30,21 +30,6 @@ connectDB()
   .catch((err) => {
     console.log("Error", err);
   });
-
-// mongoose.set('strictQuery',false)
-// const connectDB = async()=>{
-//     try{
-//         await mongoose.connect(process.env.MONGO_URL,{
-//             useNewUrlParser:true,
-//             useUnifiedToplogy:true,
-//         })
-//     console.log('MongoDB database is connected')
-
-//     }
-//     catch(err){
-//         console.log('MongoDB database is connected FI')
-//     }
-// }
 
 app.use(express.json());
 app.use(cookieParser());
